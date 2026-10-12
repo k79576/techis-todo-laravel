@@ -19,7 +19,7 @@ return view('welcome');
 
 Auth::routes();
 
-Route::get('/home' , [App\Http\Controlles\HomeControlle::Class, 'index'])->name('home');
+Route::get('/home' , [App\Http\Controllers\HomeController::Class, 'index'])->name('home');
 
 Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index']);
 Route::post('/create', [App\Http\Controllers\TaskController::class, 'create']);
