@@ -23,4 +23,4 @@ Route::get('/home' , [App\Http\Controllers\HomeController::Class, 'index'])->nam
 
 Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index']);
 Route::post('/create', [App\Http\Controllers\TaskController::class, 'create']);
-Route::post('/delete/{taskId}', [App\Http\Controllers\TaskController::class, 'delete']);
+Route::delete('/delete/{taskId}', [App\Http\Controllers\TaskController::class, 'delete']);
