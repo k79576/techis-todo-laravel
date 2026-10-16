@@ -19,6 +19,18 @@ class MemberController extends Controller
         return view('member.entry');
     }
 
+    public function memberEntry(Request $request){
+        //新しくレコードを作成する
+        $memberdata = new Member();
+        $memberdata->name = $request->name;
+        $memberdata->phone = $request->phone;
+        $memberdata->email = $request->email;
+        $memberdata->save();
+
+        return redirect('/top');
+
+    }
+
     public function edit(){
         return view('member.edit');
     }
