@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +26,16 @@ Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index']);
 Route::post('/create', [App\Http\Controllers\TaskController::class, 'create']);
 Route::delete('/delete/{taskId}', [App\Http\Controllers\TaskController::class, 'delete']);
 
-Route::get('/top',  [App\Http\Controllers\MemberController::class, 'top']);
+// 1. 一覧画面 (http://127.0.0.1:8000/top)
+Route::get('/top', [MemberController::class, 'top'])->name('members.top');
 
-Route::get('/entry',  [App\Http\Controllers\MemberController::class, 'entry']);
-Route::post('/memberEntry',  [App\Http\Controllers\MemberController::class, 'memberEntry']);
+// 2. 新規登録画面 (http://127.0.0.1:8000/entry)
+Route::get('/entry', [MemberController::class, 'entry'])->name('members.entry');
+Route::post('/memberEntry', [MemberController::class, 'memberEntry'])->name('members.memberEntry');
 
+// 3. 編集画面 (http://127.0.0.1:8000/edit/1 など IDが必要)
+Route::get('/edit/{id}', [MemberController::class, 'edit'])->name('members.edit');
+Route::post('/memberEdit', [MemberController::class, 'memberEdit'])->name('members.memberEdit');
 
-Route::get('/edit',  [App\Http\Controllers\MemberController::class, 'edit']);
+// 4. 削除処理
+Route::delete('/memberDestroy/{id}', [MemberController::class, 'memberDestroy'])->name('members.memberDestroy');
