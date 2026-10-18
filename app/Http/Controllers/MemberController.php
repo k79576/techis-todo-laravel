@@ -10,13 +10,13 @@ class MemberController extends Controller
     //画面の表示
     public function top(){
         $membersdata = Member::all();
-        return view('member.top',[
+        return view('members.top',[
             'membersdata' => $membersdata,
         ]);
     }
 
     public function entry(){
-        return view('member.entry');
+        return view('members.entry');
     }
 
     public function memberEntry(Request $request){
@@ -32,6 +32,6 @@ class MemberController extends Controller
     }
 
     public function edit(){
-        return view('member.edit');
+        return view('members.edit');
     }
 }
