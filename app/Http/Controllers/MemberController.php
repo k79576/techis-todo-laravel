@@ -10,7 +10,7 @@ class MemberController extends Controller
     // 一覧画面の表示
     public function top()
     {
-        // 全件取得（作成日時の降順にしたい場合は Member::latest()->get() でもOK）
+        // 全件取得
         $membersdata = Member::all();
 
         return view('members.top', [

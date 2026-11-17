@@ -28,19 +28,19 @@
 
             <!-- 名前 -->
             <div class="mb-3">
-                <label class="form-label fw-bold">名前 <span class="text-danger">*</span></label>
+                <label class="form-label fw-bold">名前 <span class="text-danger"></span></label>
                 <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}" placeholder="名前" required>
             </div> 
 
             <!-- 電話番号 -->
             <div class="mb-3">
-                <label class="form-label">電話番号</label>
+                <label class="form-label fw-bold">電話番号</label>
                 <input class="form-control @error('phone') is-invalid @enderror" type="text" name="phone" value="{{ old('phone') }}" placeholder="電話番号">
             </div>
 
             <!-- メールアドレス -->
             <div class="mb-3">
-                <label class="form-label fw-bold">メールアドレス <span class="text-danger">*</span></label>
+                <label class="form-label fw-bold">メールアドレス <span class="text-danger"></span></label>
                 <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" value="{{ old('email') }}" placeholder="メールアドレス" required>
             </div>
 

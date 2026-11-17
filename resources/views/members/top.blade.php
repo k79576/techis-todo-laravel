@@ -11,9 +11,9 @@
 
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2>会員一覧</h2>
+            <h3>会員一覧</h3>
             <!-- 新規登録ボタン -->
-            <a href="/entry" class="btn btn-primary">+ 登録</a>
+            <a href="/entry" class="btn btn-primary"> 登録</a>
         </div>
 
         <!-- 成功メッセージ表示 -->
@@ -33,7 +33,7 @@
                             <th>名前</th>
                             <th>電話番号</th>
                             <th>メールアドレス</th>
-                            <th class="text-end" style="width: 180px;">編集</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -46,7 +46,7 @@
                                 <td class="text-end">
                                     <div class="d-flex gap-2 justify-content-end">
                                         <!-- ⭕ ここを修正: IDをURL末尾に付与する (/edit/1 などの形式) -->
-                                        <a href="/edit/{{ $memberdata->id }}" class="btn btn-sm btn-warning text-white">編集</a>
+                                        <a href="/edit/{{ $memberdata->id }}" class="btn btn-sm btn-warning text-black">編集</a>
 
                                         <!-- 削除用フォーム -->
                                         <form action="/memberDestroy/{{ $memberdata->id }}" method="POST" onsubmit="return confirm('本当に削除しますか？');">
